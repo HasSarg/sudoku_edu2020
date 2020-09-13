@@ -1,1 +1,1 @@
-# sudoku_2020
+# sudoku_edu2020
