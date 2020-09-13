@@ -63,9 +63,11 @@ bool GAME::Sudoku::isValidDigit(const int row, const int col, const int digit)
 
 bool GAME::Sudoku::isDigitPresentedInRow(const int row, const int digit)
 {
-    for (int col = 0; col < N; ++col)
-        if (grid[row][col] == digit)
+    for (int col = 0; col < N; ++col) {
+        if (grid[row][col] == digit) {
             return true;
+        }
+    }
     return false;
 }
 
@@ -79,23 +81,26 @@ bool GAME::Sudoku::isDigitPresentedInCol(const int col, const int digit)
     return false;
 }
 
-
 bool GAME::Sudoku::isDigitPresentedIn3X3Part(const int startRow,
                                              const int startCol,
                                              const int digit)
 {
-    for (int row = 0; row < 3; ++row)
-        for (int col = 0; col < 3; ++col)
-            if (grid[startRow + row][startCol + col] == digit)
+    for (int row = 0; row < 3; ++row) {
+        for (int col = 0; col < 3; ++col) {
+            if (grid[startRow + row][startCol + col] == digit) {
                 return true;
+            }
+        }
+    }
     return false;
 }
 
 void GAME::Sudoku::print()
 {
     for (int row = 0; row < N; ++row) {
-        for (int col = 0; col < N; col++)
+        for (int col = 0; col < N; col++) {
             std::cout << grid[row][col] << " ";
+        }
         std::cout << std::endl;
     }
 }
