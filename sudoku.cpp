@@ -1,6 +1,7 @@
 #include "sudoku.h"
 
-namespace GAME {
+namespace GAME
+{
 
     Sudoku::Sudoku()
     {
@@ -26,12 +27,13 @@ namespace GAME {
             }
         }
     }
-    
+
     bool Sudoku::solve()
     {
         int row, col;
-        if (!findZeroInGrid(row, col))
+        if (!findZeroInGrid(row, col)) {
             return true;
+        }
         for (int digit = 1; digit <= 9; digit++) {
             if (isValidDigit(row, col, digit)) {
                 grid[row][col] = digit;
@@ -43,7 +45,7 @@ namespace GAME {
         }
         return false;
     }
-    
+
     bool Sudoku::findZeroInGrid(int &row, int &col)
     {
         for (row = 0; row < N; ++row) {
@@ -55,14 +57,14 @@ namespace GAME {
         }
         return false;
     }
-    
+
     bool Sudoku::isValidDigit(const int row, const int col, const int digit)
     {
         return !isDigitPresentedInRow(row, digit) &&
                !isDigitPresentedInCol(col, digit) &&
                !isDigitPresentedIn3X3Part(row - row % 3 , col - col % 3, digit);
     }
-    
+
     bool Sudoku::isDigitPresentedInRow(const int row, const int digit)
     {
         for (int col = 0; col < N; ++col) {
@@ -72,7 +74,7 @@ namespace GAME {
         }
         return false;
     }
-    
+
     bool Sudoku::isDigitPresentedInCol(const int col, const int digit)
     {
         for (int row = 0; row < N; ++row) {
@@ -82,10 +84,10 @@ namespace GAME {
         }
         return false;
     }
-    
+
     bool Sudoku::isDigitPresentedIn3X3Part(const int startRow,
-                                                 const int startCol,
-                                                 const int digit)
+                                           const int startCol,
+                                           const int digit)
     {
         for (int row = 0; row < 3; ++row) {
             for (int col = 0; col < 3; ++col) {
@@ -96,7 +98,7 @@ namespace GAME {
         }
         return false;
     }
-    
+
     void Sudoku::print()
     {
         for (int row = 0; row < N; ++row) {
