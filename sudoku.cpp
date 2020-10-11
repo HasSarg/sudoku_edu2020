@@ -58,14 +58,14 @@ namespace GAME
         return false;
     }
 
-    bool Sudoku::isValidDigit(const int row, const int col, const int digit)
+    bool Sudoku::isValidDigit(int row, int col, int digit)
     {
         return !isDigitPresentedInRow(row, digit) &&
                !isDigitPresentedInCol(col, digit) &&
                !isDigitPresentedIn3X3Part(row - row % 3 , col - col % 3, digit);
     }
 
-    bool Sudoku::isDigitPresentedInRow(const int row, const int digit)
+    bool Sudoku::isDigitPresentedInRow(int row, int digit)
     {
         for (int col = 0; col < N; ++col) {
             if (grid[row][col] == digit) {
@@ -75,7 +75,7 @@ namespace GAME
         return false;
     }
 
-    bool Sudoku::isDigitPresentedInCol(const int col, const int digit)
+    bool Sudoku::isDigitPresentedInCol(int col, int digit)
     {
         for (int row = 0; row < N; ++row) {
             if (grid[row][col] == digit) {
@@ -85,9 +85,9 @@ namespace GAME
         return false;
     }
 
-    bool Sudoku::isDigitPresentedIn3X3Part(const int startRow,
-                                           const int startCol,
-                                           const int digit)
+    bool Sudoku::isDigitPresentedIn3X3Part(int startRow,
+                                           int startCol,
+                                           int digit)
     {
         for (int row = 0; row < 3; ++row) {
             for (int col = 0; col < 3; ++col) {
