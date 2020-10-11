@@ -8,7 +8,7 @@ namespace GAME {
     class Sudoku {
     private:
         int grid[N][N];
-        bool findZeroInGrid(int &, int &);
+        bool findZeroInGrid(int &row, int &col);
         bool isValidDigit(const int row, const int col, const int digit);
         bool isDigitPresentedInRow(const int row, const int digit);
         bool isDigitPresentedInCol(const int col, const int digit);
