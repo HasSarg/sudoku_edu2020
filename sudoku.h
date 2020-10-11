@@ -9,11 +9,11 @@ namespace GAME {
     private:
         int grid[N][N];
         bool findZeroInGrid(int &row, int &col);
-        bool isValidDigit(const int row, const int col, const int digit);
-        bool isDigitPresentedInRow(const int row, const int digit);
-        bool isDigitPresentedInCol(const int col, const int digit);
-        bool isDigitPresentedIn3X3Part(const int startRow, const int startCol,
-                                       const int digit);
+        bool isValidDigit(int row, int col, int digit);
+        bool isDigitPresentedInRow(int row, int digit);
+        bool isDigitPresentedInCol(int col, int digit);
+        bool isDigitPresentedIn3X3Part(int startRow, int startCol,
+                                       int digit);
     public:
         Sudoku();
         void entryDigits();
