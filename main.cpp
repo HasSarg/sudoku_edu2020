@@ -4,7 +4,7 @@ int main()
 {
     GAME::Sudoku sudoku;
     sudoku.entryDigits();
-    if (sudoku.solve() == true) {
+    if (sudoku.solve()) {
         std::cout << "\nSolution see below: \n";
         sudoku.print();
     } else {
